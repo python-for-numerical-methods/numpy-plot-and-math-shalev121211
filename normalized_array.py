@@ -10,10 +10,8 @@ def normalize_array(input_array):
     new_array = (input_array - arr_min) / (arr_max - arr_min)
     
     return new_array
-    # חשוב לזכור להחליף את pass ב- return
 
 if __name__ == "__main__":
-    # כאן הסטודנטים יכולים להריץ בדיקה עצמית מהירה
-    test_data = [10, 20, 30, 40, 50]
+    test_data = np.array([10, 20, 30, 40, 50])
     print(f"Original: {test_data}")
-    print(f"Normalized: {normalized_array(test_data)}")
+    print(f"Normalized: {normalize_array(test_data)}")

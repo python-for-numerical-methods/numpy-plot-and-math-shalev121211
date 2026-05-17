@@ -1,7 +1,6 @@
 import numpy as np
 
-def normalize_array(input_array):
-    # וידוא שהקלט הוא מערך numpy, למקרה שהטסטר מכניס רשימה רגילה
+def normalized_array(input_array):
     arr = np.array(input_array, dtype=float)
     
     arr_min = np.min(arr)
@@ -13,3 +12,4 @@ def normalize_array(input_array):
     new_array = (arr - arr_min) / (arr_max - arr_min)
     
     return new_array
+    

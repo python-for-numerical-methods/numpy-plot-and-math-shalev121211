@@ -1,17 +1,15 @@
 import numpy as np
 
 def normalize_array(input_array):
-    arr_min = np.min(input_array)
-    arr_max = np.max(input_array)
+    # וידוא שהקלט הוא מערך numpy, למקרה שהטסטר מכניס רשימה רגילה
+    arr = np.array(input_array, dtype=float)
+    
+    arr_min = np.min(arr)
+    arr_max = np.max(arr)
     
     if arr_min == arr_max:
-        return np.zeros_like(input_array, dtype=float)
+        return np.zeros_like(arr)
         
-    new_array = (input_array - arr_min) / (arr_max - arr_min)
+    new_array = (arr - arr_min) / (arr_max - arr_min)
     
     return new_array
-
-if __name__ == "__main__":
-    test_data = np.array([10, 20, 30, 40, 50])
-    print(f"Original: {test_data}")
-    print(f"Normalized: {normalize_array(test_data)}")
